@@ -108,12 +108,7 @@ const CampusServer = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <button 
-                  onClick={handleGetStarted}
-                  className="btn btn-primary"
-                >
-                  Get Started <FaArrowRight className="ml-2" />
-                </button>
+                
               </motion.div>
             </div>
           </div>

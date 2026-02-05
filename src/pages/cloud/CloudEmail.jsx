@@ -163,12 +163,7 @@ const CloudEmail = () => {
                   ))}
                 </div>
 
-                <button 
-                  onClick={() => handleChoosePlan('Learn More')}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 inline-flex items-center"
-                >
-                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                </button>
+               
               </div>
             </div>
           </div>
@@ -206,92 +201,8 @@ const CloudEmail = () => {
             </div>
           </div>
         </section>
-
-        {/* Pricing Section */}
-        <section className="py-12 md:py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                Choose Your Plan
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Select the perfect email solution for your business needs
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
-              {pricingPlans.map((plan, index) => (
-                <div
-                  key={index}
-                  className={`relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:scale-105 ${
-                    plan.popular ? 'ring-4 ring-purple-500 lg:scale-105' : ''
-                  }`}
-                >
-                  {plan.popular && (
-                    <div className="absolute top-0 left-0 right-0 bg-purple-500 text-white text-center py-3 text-sm font-semibold">
-                      ⭐ Most Popular
-                    </div>
-                  )}
-                  
-                  <div className={`bg-gradient-to-r ${plan.gradient} p-6 md:p-8 text-white ${plan.popular ? 'pt-12' : ''}`}>
-                    <div className="text-center">
-                      <div className="mb-4">
-                        {plan.icon}
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-bold mb-2">{plan.name}</h3>
-                      <div className="flex items-baseline justify-center">
-                        <span className="text-4xl md:text-5xl font-bold">{plan.price}</span>
-                        <span className="text-lg ml-1 opacity-80">{plan.period}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-6 md:p-8">
-                    <ul className="space-y-4 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start">
-                          <Check className="text-green-500 mt-1 mr-3 flex-shrink-0 w-5 h-5" />
-                          <span className="text-sm md:text-base text-gray-700">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <button 
-                      onClick={() => handleChoosePlan(plan.name)}
-                      className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
-                        plan.popular 
-                          ? 'bg-purple-500 text-white hover:bg-purple-600 shadow-lg' 
-                          : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                      }`}
-                    >
-                      Choose {plan.name}
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
-        <section className="py-12 md:py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-                Ready to Get Started?
-              </h2>
-              <p className="text-lg md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto opacity-90">
-                Join thousands of businesses that trust our cloud email solutions
-              </p>
-              <button 
-                onClick={() => handleChoosePlan('Free Trial')}
-                className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </section>
+        
 
         {/* Contact Form Modal */}
         <ContactForm 

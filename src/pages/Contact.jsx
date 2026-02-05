@@ -7,12 +7,12 @@ import SectionTitle from '../components/ui/SectionTitle'
 
 const Contact = () => {
   const position = [27.5675289, 76.6160462] // Prerna Infotech coordinates
-  const phoneNumber = '+919414016029'
+  const phoneNumber = '93588-53990'
   const email = 'Vishal@prernainffotech.com'
-  const whatsappNumber = '919414016029'
+  const whatsappNumber = '93588-53990'
   
   const handleCall = () => {
-    window.location.href = `tel:${9352686232}`
+    window.location.href = `tel:${phoneNumber}`
   }
   
   const handleEmail = () => {
@@ -111,13 +111,7 @@ const Contact = () => {
                   <span>WhatsApp</span>
                 </button>
                 
-                <button
-                  onClick={handleEmail}
-                  className="flex items-center justify-center gap-1 sm:gap-2 bg-blue-500 text-white py-2 sm:py-3 px-3 sm:px-6 rounded-lg hover:bg-blue-600 transition-colors flex-1 text-xs sm:text-sm"
-                >
-                  <FaEnvelope className="text-xs sm:text-sm" />
-                  <span>Email</span>
-                </button>
+               
               </motion.div>
               
               <motion.div

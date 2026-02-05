@@ -109,7 +109,7 @@ const CloudBackup = () => {
           </div>
 
           {/* Pricing Cards Section */}
-          <div className="mb-12">
+          {/* <div className="mb-12">
             <motion.div
               className="text-center mb-12"
               initial={{ opacity: 0, y: 20 }}
@@ -169,21 +169,10 @@ const CloudBackup = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Call to Action */}
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <p className="text-gray-600 mb-6">Need a custom solution? We're here to help!</p>
-            <Link to="/contact" className="btn btn-primary">
-              Contact Us <FaArrowRight className="ml-2" />
-            </Link>
-          </motion.div>
+         
         </div>
       </section>
 

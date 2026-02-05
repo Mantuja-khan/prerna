@@ -289,7 +289,7 @@ const WebDevelopment = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      {/* <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -328,10 +328,10 @@ const WebDevelopment = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+      {/* <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -359,7 +359,7 @@ const WebDevelopment = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </>
   )
 }
