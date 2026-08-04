@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 import { FaUsers, FaLaptopCode, FaSmile, FaTrophy } from 'react-icons/fa'
 
 const stats = [
-  { id: 1, label: 'Happy Clients', value: 3000, icon: <FaSmile className="text-4xl text-primary-500 mb-4" /> },
-  { id: 2, label: 'Projects Completed', value: 100, icon: <FaLaptopCode className="text-4xl text-primary-500 mb-4" /> },
-  { id: 3, label: 'Team Members', value: 16, icon: <FaUsers className="text-4xl text-primary-500 mb-4" /> },
-  { id: 4, label: 'Awards Won', value: 20, icon: <FaTrophy className="text-4xl text-primary-500 mb-4" /> },
+  { id: 1, label: 'Happy Clients', value: 4000, icon: <FaSmile className="text-4xl text-primary-500 mb-4" /> },
+  { id: 2, label: 'Projects Completed', value: 400, icon: <FaLaptopCode className="text-4xl text-primary-500 mb-4" /> },
+  { id: 3, label: 'Team Members', value: 10, icon: <FaUsers className="text-4xl text-primary-500 mb-4" /> },
+  { id: 4, label: 'Years Experience', value: 12, icon: <FaTrophy className="text-4xl text-primary-500 mb-4" /> },
 ]
 
 const CountUp = ({ end, duration }) => {

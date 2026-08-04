@@ -24,8 +24,8 @@ const ProductCard = ({ title, description, image, features, link, delay = 0 }) =
         
         {features && features.length > 0 && (
           <div className="mb-4">
-            <h4 className="font-semibold mb-2">Key Features:</h4>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
+            <h4 className="font-semibold mb-2 text-sm">Key Features:</h4>
+            <ul className="list-disc list-inside text-gray-600 space-y-0.5 text-xs">
               {features.map((feature, index) => (
                 <li key={index}>{feature}</li>
               ))}

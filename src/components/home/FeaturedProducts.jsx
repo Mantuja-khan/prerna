@@ -1,32 +1,34 @@
 import SectionTitle from '../ui/SectionTitle'
 import ProductCard from '../ui/ProductCard'
+import tally_img from '../../assets/tally_images.jpeg'
+import busy_img from '../../assets/busy_sales_hero.png'
 
 const products = [
   {
     id: 1,
-    title: "Tally",
-    description: "Powerful accounting and business management software to streamline your operations.",
-    image: "https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Tally Prime",
+    description: "Powerful accounting, GST compliance, and business management software to streamline your financial operations.",
+    image: tally_img,
     features: [
-      "Comprehensive accounting solution",
-      "Inventory management",
-      "Payroll and compliance",
-      "Customizable reports",
-      "GST compliance"
+      "GST Return Filing & E-Invoicing",
+      "Real-time Inventory & Stock Tracking",
+      "Payroll & Employee Compliance",
+      "Comprehensive Financial Reports",
+      "Multi-currency & Multi-company Support"
     ],
     link: "/products"
   },
   {
     id: 2,
-    title: "BizCloudConnect",
-    description: "Cloud-based business management platform for the modern workplace.",
-    image: "https://images.pexels.com/photos/7988079/pexels-photo-7988079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Busy Accounting Software",
+    description: "Complete business accounting & inventory management solution for micro, small and medium enterprises.",
+    image: busy_img,
     features: [
-      "Centralized data management",
-      "Real-time collaboration",
-      "Secure file storage",
-      "Seamless integration with other tools",
-      "Mobile accessibility"
+      "Multi-Location Inventory Management",
+      "GST Billing & E-Way Bill Generation",
+      "Order Processing & Quotation System",
+      "Invoicing with Barcode Support",
+      "Financial Audit & MIS Reports"
     ],
     link: "/products"
   }
@@ -37,8 +39,8 @@ const FeaturedProducts = () => {
     <section className="section bg-white">
       <div className="container">
         <SectionTitle 
-          title="Our Products" 
-          subtitle="Discover our flagship products designed to boost your business efficiency"
+          title="Our Featured Products" 
+          subtitle="Discover our flagship business accounting & management software solutions"
           centered
         />
         

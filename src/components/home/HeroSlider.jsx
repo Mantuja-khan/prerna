@@ -1,193 +1,258 @@
 import { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaArrowRight } from 'react-icons/fa'
+import { FaArrowRight, FaChevronLeft, FaChevronRight, FaPhoneAlt, FaCheck, FaHeadset, FaShieldAlt, FaLock, FaDesktop } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import web_development from "../../assets/web_development.png"
-import IT_solutions from "../../assets/it_solutions.png"
-import cloud from "../../assets/cloud_services.png"
+import web_development from "../../assets/web_development_hero.png"
+import cloud from "../../assets/cloud_services_hero.png"
+import busy_sales from "../../assets/busy_sales_hero.png"
+import tally_sales from "../../assets/tally_sales_hero.png"
 
 const slides = [
   {
     id: 1,
-    title: "IT Services",
-    subtitle: "Complete IT Solutions for Your Business",
-    description: "We provide comprehensive IT services to help your business grow and succeed in the digital age. Our expert team delivers cutting-edge solutions tailored to your unique needs.",
-    image: IT_solutions,
-    link: "/services",
-    color: "from-blue-600 to-purple-700"
+    title: "Tally Sales &",
+    highlight: "Services",
+    subtitle: "AUTHORIZED TALLY PARTNER & COMPLETE SOLUTIONS",
+    description: "Get genuine Tally Prime licensing, custom Tally module development, seamless data sync, and fast 24/7 technical support for business accounting.",
+    badge: "Authorized Tally Partner",
+    image: tally_sales,
+    link: "/products",
+    highlights: [
+      { text: "Authorized Support", icon: <FaShieldAlt /> },
+      { text: "Expert Technicians", icon: <FaLock /> },
+      { text: "Quick Response", icon: <FaDesktop /> }
+    ]
   },
   {
     id: 2,
-    title: "Cloud Solutions",
-    subtitle: "Modernize Your Business Infrastructure",
-    description: "Transform your business with our scalable and secure cloud solutions tailored to your needs. Experience seamless integration and enhanced productivity.",
-    image: cloud,
-    link: "/cloud",
-    color: "from-emerald-600 to-teal-700"
+    title: "Busy Sales &",
+    highlight: "Services",
+    subtitle: "COMPLETE BUSINESS ACCOUNTING SOFTWARE",
+    description: "Empower your business with Busy accounting software sales, multi-user network setup, custom implementation, and dedicated service support.",
+    badge: "Busy Software Partner",
+    image: busy_sales,
+    link: "/products",
+    highlights: [
+      { text: "Genuine Software", icon: <FaShieldAlt /> },
+      { text: "Multi-User Setup", icon: <FaLock /> },
+      { text: "Dedicated Support", icon: <FaDesktop /> }
+    ]
   },
   {
     id: 3,
-    title: "Web Development",
-    subtitle: "Custom Websites & Web Applications",
-    description: "Create a powerful online presence with our custom web development and design services. Build responsive, modern websites that convert visitors into customers.",
+    title: "Cloud Services",
+    highlight: "Solutions",
+    subtitle: "MODERNIZE YOUR BUSINESS INFRASTRUCTURE",
+    description: "Access your accounting software, databases, and critical business files from anywhere with high-performance, secure cloud hosting.",
+    badge: "Remote Cloud Hosting",
+    image: cloud,
+    link: "/services",
+    highlights: [
+      { text: "99.9% Uptime", icon: <FaShieldAlt /> },
+      { text: "End-to-End Encryption", icon: <FaLock /> },
+      { text: "Remote Access", icon: <FaDesktop /> }
+    ]
+  },
+  {
+    id: 4,
+    title: "Website Design &",
+    highlight: "Development",
+    subtitle: "CUSTOM WEBSITES & WEB APPLICATIONS",
+    description: "Elevate your brand with custom responsive web development, web apps, e-commerce solutions, and search-optimized modern design.",
+    badge: "Modern Web Solutions",
     image: web_development,
     link: "/services",
-    color: "from-orange-600 to-red-700"
+    highlights: [
+      { text: "Responsive Design", icon: <FaShieldAlt /> },
+      { text: "SEO Optimized", icon: <FaLock /> },
+      { text: "Fast Performance", icon: <FaDesktop /> }
+    ]
   }
 ]
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isAutoPlay, setIsAutoPlay] = useState(true)
   const intervalRef = useRef(null)
-  
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
   }
-  
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
+  }
+
   useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      nextSlide()
-    }, 5000) // Auto-slide every 5 seconds
-    
+    if (isAutoPlay) {
+      intervalRef.current = setInterval(() => {
+        nextSlide()
+      }, 5000)
+    }
+
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current)
       }
     }
-  }, [])
-  
+  }, [isAutoPlay, currentSlide])
+
   return (
-    <div className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent transform -skew-x-12 animate-pulse"></div>
+    <div 
+      className="relative min-h-[580px] lg:min-h-[640px] overflow-hidden bg-[#f4f8fd] text-slate-800"
+      onMouseEnter={() => setIsAutoPlay(false)}
+      onMouseLeave={() => setIsAutoPlay(true)}
+    >
+      {/* Background Soft Radial Blue Glows */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-blue-100/70 via-sky-50/40 to-transparent pointer-events-none"></div>
+
+      {/* Decorative Outer Ring on Left Background */}
+      <div className="absolute -top-24 -left-24 w-[420px] h-[420px] rounded-full border border-blue-200/40 bg-blue-100/30 filter blur-2xl pointer-events-none"></div>
+
+      {/* Dot Matrix Pattern - Top Right & Bottom Left */}
+      <div className="absolute top-10 right-12 grid grid-cols-6 gap-2.5 opacity-30 pointer-events-none">
+        {Array.from({ length: 30 }).map((_, i) => (
+          <div key={i} className="w-1.5 h-1.5 bg-[#93c5fd] rounded-full"></div>
+        ))}
       </div>
-      
-      {/* Main Content */}
-      <div className="relative z-10 h-full min-h-[60vh] sm:min-h-[70vh] md:min-h-screen">
+
+      <div className="absolute bottom-10 left-12 grid grid-cols-6 gap-2.5 opacity-30 pointer-events-none">
+        {Array.from({ length: 30 }).map((_, i) => (
+          <div key={i} className="w-1.5 h-1.5 bg-[#93c5fd] rounded-full"></div>
+        ))}
+      </div>
+
+      {/* Main Content Container */}
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 py-12 lg:py-16 min-h-[580px] lg:min-h-[640px] flex items-center">
         <AnimatePresence mode="wait">
-          <motion.div
+          <div
             key={currentSlide}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="h-full min-h-[60vh] sm:min-h-[70vh] md:min-h-screen"
+            className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full"
           >
-            {/* Gradient Background */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${slides[currentSlide].color} opacity-90`}></div>
-            
-            <div className="relative z-20 container mx-auto px-4 lg:px-8 h-full min-h-[60vh] sm:min-h-[70vh] md:min-h-screen">
-              <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center h-full min-h-[60vh] sm:min-h-[70vh] md:min-h-screen py-8 lg:py-0">
-                
-                {/* Left Content */}
-                <motion.div
-                  initial={{ x: -100, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="text-white space-y-3 sm:space-y-4 lg:space-y-6 order-2 lg:order-1"
-                >
-                  {/* Badge */}
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="inline-block"
-                  >
-                    <span className="px-2 sm:px-3 py-1 sm:py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium border border-white/30">
-                      ✨ Professional Services
-                    </span>
-                  </motion.div>
-                  
-                  {/* Subtitle */}
-                  <motion.h2
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    className="text-xs sm:text-sm md:text-base font-medium text-gray-200"
-                  >
-                    {slides[currentSlide].subtitle}
-                  </motion.h2>
-                  
-                  {/* Main Title */}
-                  <motion.h1
-                    initial={{ y: 50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight"
-                  >
-                    {slides[currentSlide].title}
-                  </motion.h1>
-                  
-                  {/* Description */}
-                  <motion.p
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed max-w-xl"
-                  >
-                    {slides[currentSlide].description}
-                  </motion.p>
-                  
-                  {/* CTA Buttons */}
-                  <motion.div
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                    className="flex flex-row gap-2 sm:gap-3 pt-2 sm:pt-4"
-                  >
-                    <Link
-                      to={slides[currentSlide].link}
-                      className="group bg-white text-gray-900 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center justify-center gap-1 sm:gap-2 hover:bg-gray-100 transition-all duration-300"
-                    >
-                      Learn More
-                      <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300 text-xs" />
-                    </Link>
-                    
-                    <Link
-                      to="/contact"
-                      className="px-3 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300"
-                    >
-                      Contact Us
-                    </Link>
-                  </motion.div>
-                </motion.div>
-                
-                {/* Right Image */}
-                <motion.div
-                  initial={{ x: 100, opacity: 0, scale: 0.8 }}
-                  animate={{ x: 0, opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  className="order-1 lg:order-2 flex justify-center lg:justify-end"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[400px]"
-                    style={{ aspectRatio: '4/3' }}
-                  >
-                    <img
-                      src={slides[currentSlide].image}
-                      alt={slides[currentSlide].title}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                </motion.div>
+            {/* Left Content Column (Animates from top) */}
+            <motion.div
+              initial={{ y: -60, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -40, opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="lg:col-span-7 space-y-5 sm:space-y-6"
+            >
+              {/* Badge & Slide Counter Row */}
+              <div className="flex items-center gap-3">
+                <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-[#e0edff] text-[#0284c7] border border-blue-200/60 flex items-center gap-1.5 shadow-xs">
+                  <span className="text-amber-500">⚡</span> {slides[currentSlide].badge}
+                </span>
+
+                <span className="px-3.5 py-1.5 rounded-full text-xs font-mono text-[#0284c7] bg-[#e0edff]/80 font-semibold border border-blue-200/40">
+                  0{currentSlide + 1} / 0{slides.length}
+                </span>
               </div>
-            </div>
-          </motion.div>
+
+              {/* Subtitle */}
+              <p className="text-xs sm:text-sm font-bold tracking-widest text-[#0284c7] uppercase">
+                {slides[currentSlide].subtitle}
+              </p>
+
+              {/* Main Title */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#0f172a] leading-[1.1]">
+                {slides[currentSlide].title}<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0284c7] via-[#38bdf8] to-[#2563eb]">
+                  {slides[currentSlide].highlight}
+                </span>
+              </h1>
+
+              {/* Description */}
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
+                {slides[currentSlide].description}
+              </p>
+
+              {/* Bullet Features Capsule Bar */}
+              <div className="inline-flex flex-wrap items-center gap-3.5 bg-white/90 backdrop-blur-md p-2 sm:p-2.5 rounded-2xl border border-blue-100 shadow-sm">
+                {slides[currentSlide].highlights.map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-blue-50/70 text-xs sm:text-sm text-slate-700 font-semibold">
+                    <div className="w-5 h-5 rounded-full bg-[#0284c7] flex items-center justify-center text-white text-[10px] shadow-xs">
+                      {item.icon}
+                    </div>
+                    <span>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Action CTA Buttons */}
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <Link
+                  to={slides[currentSlide].link}
+                  className="bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold text-sm px-8 py-3.5 rounded-full shadow-lg shadow-sky-500/25 flex items-center gap-2.5 transition-all duration-300 hover:scale-105"
+                >
+                  Explore Solutions
+                  <FaArrowRight className="text-xs" />
+                </Link>
+
+                <Link
+                  to="/contact"
+                  className="bg-white hover:bg-slate-50 border border-blue-200 text-slate-700 font-semibold text-sm px-8 py-3.5 rounded-full shadow-xs flex items-center gap-2.5 transition-all duration-300 hover:scale-105"
+                >
+                  <FaPhoneAlt className="text-xs text-[#0284c7]" /> Contact Us
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Column: Hero Graphic (Animates from right) */}
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 80, opacity: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+              className="lg:col-span-5 flex justify-center lg:justify-end"
+            >
+              <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] flex flex-col items-center justify-center py-4">
+                {/* Circular Ambient Light Blue Backdrop Plate */}
+                <div className="absolute w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] lg:w-[420px] lg:h-[420px] rounded-full bg-gradient-to-tr from-blue-200/50 via-sky-100/60 to-blue-50/30 border border-blue-200/40 shadow-inner pointer-events-none"></div>
+
+                {/* Hero Transparent Image */}
+                <img
+                  src={slides[currentSlide].image}
+                  alt={slides[currentSlide].title}
+                  className="relative z-10 w-full max-h-[280px] sm:max-h-[340px] lg:max-h-[380px] object-contain filter drop-shadow-lg transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+            </motion.div>
+          </div>
         </AnimatePresence>
       </div>
-      
-      {/* Progress Bar */}
-      <div className="absolute bottom-0 left-0 right-0 z-30 h-1 bg-white/20">
-        <motion.div
-          key={currentSlide}
-          initial={{ width: '0%' }}
-          animate={{ width: '100%' }}
-          transition={{ duration: 4, ease: 'linear' }}
-          className="h-full bg-white"
-        />
+
+      {/* Left Navigation Arrow */}
+      <button
+        onClick={prevSlide}
+        aria-label="Previous slide"
+        className="absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white text-slate-700 border border-slate-200/80 flex items-center justify-center shadow-md transition-all duration-300 hover:scale-110 focus:outline-none"
+      >
+        <FaChevronLeft className="text-sm" />
+      </button>
+
+      {/* Right Navigation Arrow */}
+      <button
+        onClick={nextSlide}
+        aria-label="Next slide"
+        className="absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white text-slate-700 border border-slate-200/80 flex items-center justify-center shadow-md transition-all duration-300 hover:scale-110 focus:outline-none"
+      >
+        <FaChevronRight className="text-sm" />
+      </button>
+
+      {/* Bottom Capsule Slide Indicators */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200/80 shadow-sm">
+        {slides.map((slide, idx) => (
+          <button
+            key={slide.id}
+            onClick={() => setCurrentSlide(idx)}
+            className={`transition-all duration-300 rounded-full focus:outline-none ${
+              currentSlide === idx 
+                ? 'w-7 h-2 bg-[#0284c7]' 
+                : 'w-2 h-2 bg-slate-300 hover:bg-slate-400'
+            }`}
+            title={slide.title}
+          />
+        ))}
       </div>
     </div>
   )

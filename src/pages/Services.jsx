@@ -8,80 +8,80 @@ import ServiceCard from '../components/ui/ServiceCard'
 const services = [
   {
     id: 1,
-    title: "IT Solutions",
-    description: "Comprehensive IT solutions designed to address your specific business challenges and drive growth.",
-    icon: <FaServer />,
+    title: "Tally Prime Services",
+    description: "Complete Tally licensing, TDL customization, data sync, and corporate accounting support.",
+    icon: <FaLaptopCode />,
     features: [
-      "IT infrastructure assessment and planning",
-      "Hardware and software procurement",
-      "Network design and implementation",
-      "System integration",
-      "IT strategy consulting"
+      "Tally Prime Silver & Gold Licensing",
+      "TSS 1-Year (₹4,500) & 2-Year (₹8,100) Renewals",
+      "TDL Customization (Invoices, QR, Reports)",
+      "Multi-Company Data Splitting & Repair",
+      "Annual Maintenance Contract (AMC)"
     ]
   },
   {
     id: 2,
-    title: "Solution Implementation",
-    description: "Expert implementation of IT solutions to ensure smooth integration with your existing systems.",
-    icon: <FaNetworkWired />,
+    title: "Busy Accounting Services",
+    description: "End-to-end Busy software sales, network multi-user installation, configuration & training.",
+    icon: <FaTools />,
     features: [
-      "Project planning and management",
-      "Solution customization",
-      "Data migration and validation",
-      "User training and onboarding",
-      "Post-implementation support"
+      "Busy Basic, Standard & Enterprise Licenses",
+      "Multi-User LAN & Server Installation",
+      "Barcode & Customized Invoice Printing",
+      "Multi-Godown & Batch Inventory Setup",
+      "Busy On-Call & On-Site Technical Support"
     ]
   },
   {
     id: 3,
-    title: "Onsite and Remote Support",
-    description: "Reliable technical support services available both onsite and remotely to address your IT issues.",
-    icon: <FaUserCog />,
+    title: "IT Solutions & Infrastructure",
+    description: "Comprehensive IT infrastructure setup, hardware procurement, and enterprise networking.",
+    icon: <FaServer />,
     features: [
-      "24/7 helpdesk support",
-      "Remote troubleshooting",
-      "Onsite technical assistance",
-      "System maintenance and updates",
-      "Performance monitoring"
+      "Server & Storage Setup",
+      "Network Cabling & Firewall Configuration",
+      "Hardware Procurement & Maintenance",
+      "System Integration & Audit",
+      "IT Strategy Consulting"
     ]
   },
   {
     id: 4,
-    title: "Annual Maintenance Contract",
-    description: "Comprehensive AMC services to keep your IT infrastructure running smoothly and efficiently.",
-    icon: <FaTools />,
+    title: "Solution Implementation",
+    description: "Expert deployment of accounting, ERP and IT software tailored to your workflows.",
+    icon: <FaNetworkWired />,
     features: [
-      "Regular preventive maintenance",
-      "Priority response for issues",
-      "Scheduled system updates",
-      "Performance optimization",
-      "Hardware maintenance and repairs"
+      "Project Planning & System Setup",
+      "Legacy Data Migration to Tally / Busy",
+      "Staff Training & Onboarding",
+      "Post-Implementation Quality Audit",
+      "Dedicated Technical Support"
     ]
   },
   {
     id: 5,
-    title: "Tally Customization",
-    description: "Custom Tally solutions tailored to meet your specific accounting and business management needs.",
-    icon: <FaLaptopCode />,
+    title: "Onsite & Remote Technical Support",
+    description: "Prompt technical assistance for accounting software, databases, and IT hardware.",
+    icon: <FaUserCog />,
     features: [
-      "Custom report development",
-      "Process automation",
-      "Integration with other systems",
-      "User interface customization",
-      "Data migration and conversion"
+      "Remote Desktop Quick Help",
+      "Onsite Engineer Visits",
+      "Scheduled System Updates & Cleanups",
+      "Database Health Checks & Backup",
+      "Performance Optimization"
     ]
   },
   {
     id: 6,
-    title: "Tally Add-ons",
-    description: "Powerful add-ons to extend the functionality of your Tally software and enhance productivity.",
+    title: "Annual Maintenance Contract (AMC)",
+    description: "Comprehensive AMC services to keep your accounting software and IT systems running smoothly.",
     icon: <FaShieldAlt />,
     features: [
-      "Advanced reporting modules",
-      "Industry-specific features",
-      "E-commerce integration",
-      "Multi-location management",
-      "Custom workflow automation"
+      "Preventive System Maintenance",
+      "Priority Issue Resolution",
+      "Unlimited Technical Call Support",
+      "Data Backup Verification",
+      "Hardware & Software Repairs"
     ]
   }
 ]

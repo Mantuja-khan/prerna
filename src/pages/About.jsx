@@ -23,7 +23,7 @@ const About = () => {
       name: "Mr. Manoj Khambbra",
       position: "Owner & CEO",
       image: manoj_sir,
-      description: "With over 15 years of experience in IT solutions, Mr Manoj Khambbra leads our company with vision and innovation."
+      description: "With over 12+ years of experience in IT solutions and accounting software, Mr Manoj Khambbra leads our company with vision and innovation."
     },
   ]
   
@@ -31,7 +31,7 @@ const About = () => {
     <>
       <Helmet>
         <title>About Us - PrernaInfotech</title>
-        <meta name="description" content="Learn about TechSolutions - who we are, our mission, our clients, and our team." />
+        <meta name="description" content="Learn about PrernaInfotech - who we are, our mission, our clients, and our team." />
       </Helmet>
       
       {/* Who We Are */}
@@ -54,7 +54,7 @@ const About = () => {
             <div className="px-4 sm:px-0">
               <SectionTitle 
                 title="Who We Are" 
-                subtitle="Your trusted technology partner since 2010"
+                subtitle="Your trusted technology partner since 2012"
               />
               
               <motion.p
@@ -64,7 +64,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                TechSolutions is a leading provider of innovative IT solutions for businesses of all sizes. With over a decade of experience, we've helped hundreds of clients transform their operations through technology.
+                PrernaInfotech is a leading provider of innovative IT solutions, Tally & Busy sales and services, and cloud computing for businesses of all sizes. With over 12+ years of experience, we've helped thousands of clients transform their operations.
               </motion.p>
               
               <motion.p
@@ -74,7 +74,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                Our team of dedicated professionals brings together expertise in IT infrastructure, cloud computing, software development, and business process optimization. We're committed to delivering solutions that address your specific business challenges and drive growth.
+                Our team of dedicated professionals brings together expertise in accounting software, IT infrastructure, cloud computing, website development, and business process optimization. We're committed to delivering solutions that drive business growth.
               </motion.p>
               
               <motion.div
@@ -85,19 +85,19 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <div className="text-center p-2 sm:p-4 bg-gray-50 rounded-lg">
-                  <h3 className="text-xl sm:text-3xl font-bold text-primary-600 mb-1 sm:mb-2">10+</h3>
+                  <h3 className="text-xl sm:text-3xl font-bold text-primary-600 mb-1 sm:mb-2">12+</h3>
                   <p className="text-gray-600 text-xs sm:text-base">Years of Experience</p>
                 </div>
                 <div className="text-center p-2 sm:p-4 bg-gray-50 rounded-lg">
-                  <h3 className="text-xl sm:text-3xl font-bold text-primary-600 mb-1 sm:mb-2">500+</h3>
-                  <p className="text-gray-600 text-xs sm:text-base">Clients Served</p>
+                  <h3 className="text-xl sm:text-3xl font-bold text-primary-600 mb-1 sm:mb-2">4000+</h3>
+                  <p className="text-gray-600 text-xs sm:text-base">Happy Clients</p>
                 </div>
                 <div className="text-center p-2 sm:p-4 bg-gray-50 rounded-lg">
-                  <h3 className="text-xl sm:text-3xl font-bold text-primary-600 mb-1 sm:mb-2">45+</h3>
+                  <h3 className="text-xl sm:text-3xl font-bold text-primary-600 mb-1 sm:mb-2">10+</h3>
                   <p className="text-gray-600 text-xs sm:text-base">Team Members</p>
                 </div>
                 <div className="text-center p-2 sm:p-4 bg-gray-50 rounded-lg">
-                  <h3 className="text-xl sm:text-3xl font-bold text-primary-600 mb-1 sm:mb-2">850+</h3>
+                  <h3 className="text-xl sm:text-3xl font-bold text-primary-600 mb-1 sm:mb-2">400+</h3>
                   <p className="text-gray-600 text-xs sm:text-base">Projects Completed</p>
                 </div>
               </motion.div>
