@@ -2,9 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaArrowRight, FaChevronLeft, FaChevronRight, FaPhoneAlt, FaCheck, FaHeadset, FaShieldAlt, FaLock, FaDesktop } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import web_development from "../../assets/web_development_hero.png"
 import cloud from "../../assets/cloud_services_hero.png"
-import busy_sales from "../../assets/busy_sales_hero.png"
 import tally_sales from "../../assets/tally_sales_hero.png"
 
 const slides = [
@@ -25,17 +23,17 @@ const slides = [
   },
   {
     id: 2,
-    title: "Busy Sales &",
-    highlight: "Services",
-    subtitle: "COMPLETE BUSINESS ACCOUNTING SOFTWARE",
-    description: "Empower your business with Busy accounting software sales, multi-user network setup, custom implementation, and dedicated service support.",
-    badge: "Busy Software Partner",
-    image: busy_sales,
+    title: "Tally on Cloud",
+    highlight: "Solutions",
+    subtitle: "SECURE REMOTE ACCESS ANYTIME & ANYWHERE",
+    description: "Run Tally Prime seamlessly on Cloud from Windows, Mac, Android or iOS with high-speed performance, automatic backups, and maximum data security.",
+    badge: "Tally Cloud Partner",
+    image: cloud,
     link: "/products",
     highlights: [
-      { text: "Genuine Software", icon: <FaShieldAlt /> },
-      { text: "Multi-User Setup", icon: <FaLock /> },
-      { text: "Dedicated Support", icon: <FaDesktop /> }
+      { text: "24/7 Cloud Access", icon: <FaShieldAlt /> },
+      { text: "Auto Daily Backups", icon: <FaLock /> },
+      { text: "High Speed RDP", icon: <FaDesktop /> }
     ]
   },
   {
@@ -52,21 +50,6 @@ const slides = [
       { text: "End-to-End Encryption", icon: <FaLock /> },
       { text: "Remote Access", icon: <FaDesktop /> }
     ]
-  },
-  {
-    id: 4,
-    title: "Website Design &",
-    highlight: "Development",
-    subtitle: "CUSTOM WEBSITES & WEB APPLICATIONS",
-    description: "Elevate your brand with custom responsive web development, web apps, e-commerce solutions, and search-optimized modern design.",
-    badge: "Modern Web Solutions",
-    image: web_development,
-    link: "/services",
-    highlights: [
-      { text: "Responsive Design", icon: <FaShieldAlt /> },
-      { text: "SEO Optimized", icon: <FaLock /> },
-      { text: "Fast Performance", icon: <FaDesktop /> }
-    ]
   }
 ]
 
@@ -74,7 +57,6 @@ const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlay, setIsAutoPlay] = useState(true)
   const intervalRef = useRef(null)
-
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
   }

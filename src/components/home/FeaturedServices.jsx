@@ -21,9 +21,9 @@ const services = [
   },
   {
     id: 3,
-    title: "Web Development",
-    description: "Custom website development and design to enhance your online presence.",
-    icon: <FaLaptopCode />,
+    title: "Solution Implementation",
+    description: "Expert deployment of accounting software, enterprise servers, and dedicated IT support.",
+    icon: <FaCogs />,
     link: "/services"
   }
 ]

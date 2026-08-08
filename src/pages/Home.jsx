@@ -4,7 +4,6 @@ import FeaturedServices from '../components/home/FeaturedServices'
 import FeaturedProducts from '../components/home/FeaturedProducts'
 import StatsSection from '../components/home/StatsSection'
 import Testimonials from '../components/home/Testimonials'
-import CTASection from '../components/home/CTASection'
 
 const Home = () => {
   return (
@@ -19,7 +18,6 @@ const Home = () => {
       <FeaturedProducts />
       <StatsSection />
       <Testimonials />
-      <CTASection />
     </>
   )
 }

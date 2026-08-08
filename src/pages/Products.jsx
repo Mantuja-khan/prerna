@@ -3,12 +3,12 @@ import { motion } from 'framer-motion'
 import { FaCheck, FaArrowRight, FaTimes, FaWhatsapp, FaPhone, FaFileAlt, FaCreditCard, FaCloudUploadAlt, FaShieldAlt, FaRupeeSign, FaTag, FaServer, FaUserCheck, FaTools } from 'react-icons/fa'
 import { useState } from 'react'
 import SectionTitle from '../components/ui/SectionTitle'
-import busy_img from "../assets/busy_sales_hero.png"
+import cloud_img from "../assets/cloud_services_hero.png"
 import tally_img from "../assets/tally_sales_hero.png"
 
 const Products = () => {
   const [showContactPopup, setShowContactPopup] = useState(false)
-  const [activeTab, setActiveTab] = useState('tally') // 'tally' | 'busy' | 'services'
+  const [activeTab, setActiveTab] = useState('tally') // 'tally' | 'tally-cloud' | 'services'
   
   const tallyFeatures = [
     "Complete accounting solution with 100% GST & E-Invoicing compliance",
@@ -18,12 +18,12 @@ const Products = () => {
     "Customizable MIS reports, audit trail (Edit Log) & financial dashboards"
   ]
 
-  const busyFeatures = [
-    "Comprehensive financial accounting with multi-currency support",
-    "Multi-location inventory with batch-wise & serial number tracking",
-    "GST billing, E-Way Bill generation & GSTR 1/3B return filing",
-    "Configurable invoice printing, barcode scanning & quotation system",
-    "Audit trail, user access controls & automated email/SMS alerts"
+  const tallyCloudFeatures = [
+    "24/7 Remote access to Tally Prime from Mac, Windows, Mobile & Web",
+    "High-performance SSD cloud servers with 99.9% uptime guarantee",
+    "Automated daily data backup with multi-location offsite storage",
+    "End-to-end SSL encryption & multi-user role-based security",
+    "Zero local hardware dependency & seamless printer/barcode integration"
   ]
 
   // Pricing Data
@@ -94,76 +94,55 @@ const Products = () => {
     }
   ]
 
-  const busyPricing = [
+  const tallyCloudPricing = [
     {
-      name: "Busy Basic Edition",
-      type: "Single / Multi User",
-      price: "₹9,000",
-      tax: "+ 18% GST (Single User)",
-      renewal: "Multi-User: ₹22,500 + GST",
+      name: "Tally on Cloud (1 User)",
+      type: "Single User",
+      price: "₹600",
+      tax: "+ 18% GST / Month",
       popular: false,
-      description: "Basic accounting and invoicing for micro enterprises.",
+      description: "Dedicated remote cloud seat for single user accounting on Mac, PC, or Mobile.",
       features: [
-        "Invoicing & Billing",
-        "Financial Accounting",
-        "GST Compliance",
-        "Standard MIS Reports"
+        "1 User Access Seat",
+        "24/7 Secure Cloud Hosting",
+        "High Speed RDP & Printing",
+        "Automated Daily Data Backup",
+        "Dedicated Technical Support"
       ]
     },
     {
-      name: "Busy Standard Edition",
-      type: "Single / Multi User",
-      price: "₹15,000",
-      tax: "+ 18% GST (Single User)",
-      renewal: "Multi-User: ₹37,500 + GST",
+      name: "Tally on Cloud (2 Users)",
+      type: "2 User Plan",
+      price: "₹1,200",
+      tax: "+ 18% GST / Month",
       popular: true,
-      description: "Complete accounting + inventory management for retail & trade.",
+      description: "Concurrent multi-user cloud hosting for growing accounting teams.",
       features: [
-        "Multi-Location Inventory",
-        "Order & Quotation Mgmt",
-        "E-Way Bill & E-Invoicing",
-        "Discount & Scheme Engine"
+        "2 Concurrent User Seats",
+        "24/7 Remote Desktop Access",
+        "High Performance SSD Hosting",
+        "Automated Daily Data Backup",
+        "Priority Engineer Assistance"
       ]
     },
     {
-      name: "Busy Enterprise Edition",
-      type: "Single / Multi User",
-      price: "₹21,000",
-      tax: "+ 18% GST (Single User)",
-      renewal: "Multi-User: ₹52,500 + GST",
+      name: "Tally on Cloud (4 Users)",
+      type: "4 User Plan",
+      price: "₹1,800",
+      tax: "+ 18% GST / Month",
       popular: false,
-      description: "Advanced enterprise controls, workflow & audit trails.",
+      description: "High speed multi-user environment for medium enterprises.",
       features: [
-        "Voucher Approval System",
-        "Configurable Audit Trail",
-        "Auto Web & Mobile Alerts",
-        "Payroll & HR Management"
+        "4 Concurrent User Seats",
+        "24/7 High Speed RDP Access",
+        "Real-Time Data Security & SSL",
+        "Automated Daily Backups",
+        "Dedicated Account Manager"
       ]
     }
   ]
 
-  const servicesPricing = [
-    {
-      title: "Tally & Busy Customization (TDL)",
-      price: "Starting ₹2,500+",
-      desc: "Custom invoice formats, barcode integration, custom report development, and workflow automation."
-    },
-    {
-      title: "Data Migration & Recovery",
-      price: "Starting ₹3,000+",
-      desc: "Data splitting, corrupted data recovery, legacy software data migration to Tally / Busy."
-    },
-    {
-      title: "Annual Maintenance Contract (AMC)",
-      price: "₹6,000 - ₹15,000/yr",
-      desc: "Unlimited telephone, remote desktop & on-site technical support, data health checkups."
-    },
-    {
-      title: "Corporate Training & Implementation",
-      price: "₹5,000 / Session",
-      desc: "Hands-on staff training for Tally Prime & Busy accounting, GST filing, and inventory setups."
-    }
-  ]
+
 
   const contacts = {
     whatsapp: [
@@ -179,12 +158,32 @@ const Products = () => {
     <>
       <Helmet>
         <title>Products & Pricing - PrernaInfotech</title>
-        <meta name="description" content="Explore Tally Prime & Busy Accounting Software sales, licenses, cloud hosting, customization, and official price list." />
+        <meta name="description" content="Explore Tally Prime & Tally on Cloud sales, licenses, cloud hosting, customization, and official price list." />
       </Helmet>
 
-      {/* Hero Header */}
+      {/* Top CTA Header Section */}
       <section className="bg-slate-900 text-white py-14 lg:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 via-slate-900 to-indigo-950/80"></div>
+        {/* Dotted Pattern Overlay */}
+        <div className="absolute inset-0 bg-dotted-pattern opacity-35 pointer-events-none" />
+        
+        {/* Decorative Dotted Matrix SVG */}
+        <div className="absolute top-4 left-6 pointer-events-none opacity-30 hidden sm:block">
+          <svg width="110" height="110" fill="none">
+            <pattern id="dot-prod-top-1" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="2.5" fill="#38bdf8" />
+            </pattern>
+            <rect width="110" height="110" fill="url(#dot-prod-top-1)" />
+          </svg>
+        </div>
+        <div className="absolute bottom-4 right-6 pointer-events-none opacity-30 hidden sm:block">
+          <svg width="110" height="110" fill="none">
+            <pattern id="dot-prod-top-2" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="2.5" fill="#38bdf8" />
+            </pattern>
+            <rect width="110" height="110" fill="url(#dot-prod-top-2)" />
+          </svg>
+        </div>
+
         <div className="container relative z-10 text-center max-w-4xl mx-auto px-4">
           <motion.span 
             initial={{ opacity: 0, y: -10 }}
@@ -198,16 +197,35 @@ const Products = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-5xl font-extrabold mb-4"
           >
-            Tally & Busy Business Software Solutions
+            Tally Prime & Tally on Cloud Solutions
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto"
+            className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto mb-8"
           >
-            Get original software licenses, implementation, TDL customization, cloud hosting, and expert maintenance services.
+            Get original software licenses, implementation, TDL customization, cloud hosting, and expert support services.
           </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            <button 
+              onClick={() => setShowContactPopup(true)}
+              className="px-7 py-3 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-full shadow-lg transition-all text-sm flex items-center gap-2"
+            >
+              Contact Sales Team <FaArrowRight className="text-xs" />
+            </button>
+            <button 
+              onClick={() => window.open('https://wa.me/919358853990?text=Hi, I need assistance with Tally Prime or Tally on Cloud.', '_blank')}
+              className="px-7 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-full shadow-lg transition-all text-sm flex items-center gap-2"
+            >
+              <FaWhatsapp className="text-lg" /> Chat on WhatsApp
+            </button>
+          </motion.div>
         </div>
       </section>
 
@@ -287,14 +305,14 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Busy Section */}
+      {/* Tally on Cloud Section */}
       <section className="section bg-slate-50 border-y border-slate-200">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <SectionTitle 
-                title="Busy Accounting Software & Services" 
-                subtitle="Integrated Business & Inventory Management Solution"
+                title="Tally on Cloud Solutions & Hosting" 
+                subtitle="Secure Remote Access to Tally Prime from Anywhere"
               />
               
               <motion.p
@@ -304,7 +322,7 @@ const Products = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                Busy Accounting Software is an easy-to-use yet powerful business management software for MSMEs. It covers multi-company accounting, advanced inventory, batch tracking, invoicing, GST compliance, and barcode printing.
+                Tally on Cloud allows businesses to access their Tally Prime software remotely from any device—Windows, Mac, Android, or iOS—with 99.9% uptime, high-speed remote desktop (RDP) performance, and automated daily data backups.
               </motion.p>
               
               <motion.div
@@ -316,7 +334,7 @@ const Products = () => {
               >
                 <h3 className="text-lg md:text-xl font-semibold mb-3 text-gray-800">Key Features:</h3>
                 <ul className="grid grid-cols-1 gap-1.5">
-                  {busyFeatures.map((feature, index) => (
+                  {tallyCloudFeatures.map((feature, index) => (
                     <li key={index} className="flex items-center px-3 py-1.5 bg-white rounded-md hover:bg-blue-50 transition-colors border border-slate-100 shadow-xs">
                       <FaCheck className="text-blue-600 mr-2.5 flex-shrink-0 text-xs" />
                       <span className="text-gray-700 text-xs md:text-sm font-medium">{feature}</span>
@@ -325,17 +343,17 @@ const Products = () => {
                 </ul>
               </motion.div>
 
-              {/* Action Buttons for Busy */}
+              {/* Action Buttons for Tally on Cloud */}
               <div className="flex flex-wrap gap-3">
                 <button
                   onClick={() => window.open('tel:+919358853990', '_self')}
                   className="flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors shadow-md text-sm font-semibold"
                 >
                   <FaPhone className="mr-2 text-xs" />
-                  Call for Busy Quote
+                  Call for Cloud Quote
                 </button>
                 <button
-                  onClick={() => window.open('https://wa.me/919358853990?text=Hi, I want to inquire about Busy Accounting Software & Services.', '_blank')}
+                  onClick={() => window.open('https://wa.me/919358853990?text=Hi, I want to inquire about Tally on Cloud Hosting & Services.', '_blank')}
                   className="flex items-center justify-center px-6 py-3 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition-colors shadow-md text-sm font-semibold"
                 >
                   <FaWhatsapp className="mr-2 text-sm" />
@@ -353,8 +371,8 @@ const Products = () => {
             >
               <div className="bg-slate-900/90 p-8 rounded-2xl border border-slate-800 shadow-xl w-full flex items-center justify-center min-h-[260px]">
                 <img 
-                  src={busy_img} 
-                  alt="Busy Accounting Software" 
+                  src={cloud_img} 
+                  alt="Tally on Cloud Hosting" 
                   className="w-full max-h-[220px] object-contain drop-shadow-md"
                 />
               </div>
@@ -368,7 +386,7 @@ const Products = () => {
         <div className="container">
           <SectionTitle 
             title="Software & Services Price List" 
-            subtitle="Transparent pricing for Tally Prime, Busy Software licenses, cloud hosting, and AMC services"
+            subtitle="Transparent pricing for Tally Prime licenses and Tally on Cloud hosting"
             centered
           />
 
@@ -386,24 +404,14 @@ const Products = () => {
                 Tally Prime Pricing
               </button>
               <button
-                onClick={() => setActiveTab('busy')}
+                onClick={() => setActiveTab('tally-cloud')}
                 className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
-                  activeTab === 'busy' 
+                  activeTab === 'tally-cloud' 
                     ? 'bg-blue-600 text-white shadow-md' 
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
-                Busy Software Pricing
-              </button>
-              <button
-                onClick={() => setActiveTab('services')}
-                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
-                  activeTab === 'services' 
-                    ? 'bg-emerald-600 text-white shadow-md' 
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                Services & AMC List
+                Tally on Cloud Pricing
               </button>
             </div>
           </div>
@@ -468,10 +476,10 @@ const Products = () => {
             </div>
           )}
 
-          {/* Busy Pricing Cards */}
-          {activeTab === 'busy' && (
+          {/* Tally on Cloud Pricing Cards */}
+          {activeTab === 'tally-cloud' && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {busyPricing.map((item, index) => (
+              {tallyCloudPricing.map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -500,7 +508,9 @@ const Products = () => {
                         <span className="text-3xl font-black">{item.price}</span>
                         <span className={`text-xs font-medium ${item.popular ? 'text-slate-300' : 'text-slate-500'}`}>{item.tax}</span>
                       </div>
-                      <p className={`text-xs mt-1 font-medium ${item.popular ? 'text-sky-300' : 'text-blue-600'}`}>{item.renewal}</p>
+                      {item.renewal && (
+                        <p className={`text-xs mt-1 font-medium ${item.popular ? 'text-sky-300' : 'text-blue-600'}`}>{item.renewal}</p>
+                      )}
                     </div>
 
                     <ul className="space-y-2 mb-6">
@@ -521,67 +531,18 @@ const Products = () => {
                         : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
                     }`}
                   >
-                    Get Busy Quote
+                    Inquire Cloud Plan
                   </button>
                 </motion.div>
               ))}
             </div>
           )}
 
-          {/* Services & AMC List */}
-          {activeTab === 'services' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {servicesPricing.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-slate-50 rounded-2xl border border-slate-200 p-6 shadow-xs hover:shadow-md transition-shadow"
-                >
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
-                    <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-200">
-                      {item.price}
-                    </span>
-                  </div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4">{item.desc}</p>
-                  <button
-                    onClick={() => setShowContactPopup(true)}
-                    className="text-xs font-semibold text-primary-600 hover:text-primary-700 flex items-center gap-1.5"
-                  >
-                    Request Service Estimate <FaArrowRight className="text-[10px]" />
-                  </button>
-                </motion.div>
-              ))}
-            </div>
-          )}
+
         </div>
       </section>
 
-      {/* Why Choose Us & Contact CTA */}
-      <section className="section bg-slate-900 text-white">
-        <div className="container text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-extrabold mb-4">Need Custom Tally/Busy Customization or Cloud Hosting?</h2>
-          <p className="text-slate-300 text-base mb-8">
-            Speak directly with our authorized technical engineers to find the exact license, customization, or cloud setup for your business.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button 
-              onClick={() => setShowContactPopup(true)}
-              className="px-8 py-3.5 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-full shadow-lg transition-all"
-            >
-              Contact Sales Team <FaArrowRight className="inline ml-2 text-xs" />
-            </button>
-            <button 
-              onClick={() => window.open('https://wa.me/919358853990?text=Hi, I need assistance with Tally/Busy Software.', '_blank')}
-              className="px-8 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-full shadow-lg transition-all flex items-center gap-2"
-            >
-              <FaWhatsapp className="text-lg" /> Chat on WhatsApp
-            </button>
-          </div>
-        </div>
-      </section>
+
 
       {/* Contact Popup */}
       {showContactPopup && (
@@ -603,13 +564,13 @@ const Products = () => {
             </div>
 
             <div className="p-6 space-y-4">
-              <p className="text-xs text-slate-600 text-center">Get instant answers for Tally & Busy licensing, pricing & services:</p>
+              <p className="text-xs text-slate-600 text-center">Get instant answers for Tally Prime & Tally on Cloud licensing, pricing & services:</p>
               
               <div className="space-y-3">
                 {contacts.whatsapp.map((contact, index) => (
                   <button
                     key={index}
-                    onClick={() => window.open(`https://wa.me/${contact.number.replace(/[^0-9]/g, '')}?text=Hi! I want to inquire about Tally / Busy software.`, '_blank')}
+                    onClick={() => window.open(`https://wa.me/${contact.number.replace(/[^0-9]/g, '')}?text=Hi! I want to inquire about Tally Prime / Tally on Cloud software.`, '_blank')}
                     className="w-full flex items-center justify-between p-3.5 border border-slate-200 rounded-xl hover:bg-emerald-50 hover:border-emerald-300 transition-all text-left"
                   >
                     <div>

@@ -12,6 +12,26 @@ const CTASection = () => {
           filter: 'brightness(0.4)'
         }}
       />
+      {/* Dotted Pattern Overlay */}
+      <div className="absolute inset-0 bg-dotted-pattern opacity-40 pointer-events-none z-0" />
+      
+      {/* Decorative Dotted Matrix Accents */}
+      <div className="absolute top-6 left-6 pointer-events-none opacity-30 z-0 hidden md:block">
+        <svg width="120" height="120" fill="none">
+          <pattern id="dot-pattern-cta-1" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+            <circle cx="3" cy="3" r="2" fill="#ffffff" />
+          </pattern>
+          <rect width="120" height="120" fill="url(#dot-pattern-cta-1)" />
+        </svg>
+      </div>
+      <div className="absolute bottom-6 right-6 pointer-events-none opacity-30 z-0 hidden md:block">
+        <svg width="120" height="120" fill="none">
+          <pattern id="dot-pattern-cta-2" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+            <circle cx="3" cy="3" r="2" fill="#ffffff" />
+          </pattern>
+          <rect width="120" height="120" fill="url(#dot-pattern-cta-2)" />
+        </svg>
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center text-white">

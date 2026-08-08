@@ -39,7 +39,74 @@ const Contact = () => {
           crossOrigin=""
         />
       </Helmet>
-      
+      {/* Top CTA Header Section */}
+      <section className="bg-slate-900 text-white py-14 lg:py-20 relative overflow-hidden">
+        {/* Dotted Pattern Overlay */}
+        <div className="absolute inset-0 bg-dotted-pattern opacity-35 pointer-events-none" />
+        
+        {/* Decorative Dotted Matrix SVG */}
+        <div className="absolute top-4 left-6 pointer-events-none opacity-30 hidden sm:block">
+          <svg width="110" height="110" fill="none">
+            <pattern id="dot-cnt-top-1" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="2.5" fill="#38bdf8" />
+            </pattern>
+            <rect width="110" height="110" fill="url(#dot-cnt-top-1)" />
+          </svg>
+        </div>
+        <div className="absolute bottom-4 right-6 pointer-events-none opacity-30 hidden sm:block">
+          <svg width="110" height="110" fill="none">
+            <pattern id="dot-cnt-top-2" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="2.5" fill="#38bdf8" />
+            </pattern>
+            <rect width="110" height="110" fill="url(#dot-cnt-top-2)" />
+          </svg>
+        </div>
+
+        <div className="container relative z-10 text-center max-w-4xl mx-auto px-4">
+          <motion.span 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="px-3.5 py-1 rounded-full text-xs font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/30 inline-block mb-3"
+          >
+            Instant Sales & Technical Assistance
+          </motion.span>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-3xl md:text-5xl font-extrabold mb-4"
+          >
+            Contact Our Expert Team
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto mb-8"
+          >
+            Have questions about Tally Prime licenses, Tally on Cloud setups, or custom IT services? We're here to help.
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            <button 
+              onClick={handleCall} 
+              className="px-7 py-3 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-full shadow-lg transition-all text-sm flex items-center gap-2"
+            >
+              <FaPhone /> Call Us Now
+            </button>
+            <button 
+              onClick={handleWhatsApp} 
+              className="px-7 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-full shadow-lg transition-all text-sm flex items-center gap-2"
+            >
+              <FaWhatsapp className="text-lg" /> Chat on WhatsApp
+            </button>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Contact Info & Map */}
       <section className="section bg-white">
         <div className="container">
@@ -179,7 +246,7 @@ const Contact = () => {
                   },
                   {
                     question: "Do you offer ongoing support?",
-                    answer: "Yes, we provide comprehensive support and maintenance services through our Annual Maintenance Contracts (AMC)."
+                    answer: "Yes, we provide comprehensive technical support and maintenance services for accounting software and IT systems."
                   },
                   {
                     question: "How quickly can you respond to support requests?",
@@ -203,6 +270,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+
     </>
   )
 }

@@ -21,7 +21,6 @@ const NotFound = lazy(() => import('./pages/NotFound'))
 // Cloud pages
 const CloudEmail = lazy(() => import('./pages/cloud/CloudEmail'))
 const CloudBackup = lazy(() => import('./pages/cloud/CloudBackup'))
-const WebDevelopment = lazy(() => import('./pages/cloud/WebDevelopment'))
 const CampusServer = lazy(() => import('./pages/cloud/CampusServer'))
 
 function App() {
@@ -48,7 +47,6 @@ function App() {
                 <Route path="/cloud" element={<Cloud />} />
                 <Route path="/cloud/email" element={<CloudEmail />} />
                 <Route path="/cloud/backup" element={<CloudBackup />} />
-                <Route path="/cloud/web-development" element={<WebDevelopment />} />
                 <Route path="/cloud/campus-server" element={<CampusServer />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />

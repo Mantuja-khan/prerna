@@ -6,8 +6,29 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16">
+    <footer className="bg-gray-900 text-white relative overflow-hidden">
+      {/* Dotted Pattern Overlay */}
+      <div className="absolute inset-0 bg-dotted-pattern opacity-20 pointer-events-none" />
+      
+      {/* Corner Dotted SVG Matrix Accents */}
+      <div className="absolute top-4 left-4 pointer-events-none opacity-20 hidden md:block">
+        <svg width="120" height="120" fill="none">
+          <pattern id="dot-footer-1" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+            <circle cx="3" cy="3" r="2" fill="#ffffff" />
+          </pattern>
+          <rect width="120" height="120" fill="url(#dot-footer-1)" />
+        </svg>
+      </div>
+      <div className="absolute bottom-4 right-4 pointer-events-none opacity-20 hidden md:block">
+        <svg width="120" height="120" fill="none">
+          <pattern id="dot-footer-2" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+            <circle cx="3" cy="3" r="2" fill="#ffffff" />
+          </pattern>
+          <rect width="120" height="120" fill="url(#dot-footer-2)" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
@@ -55,7 +76,7 @@ const Footer = () => {
               <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Onsite Support</Link></li>
               <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Remote Support</Link></li>
               <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Tally Customization</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Annual Maintenance</Link></li>
+              <li><Link to="/products" className="text-gray-300 hover:text-white transition-colors">Tally on Cloud</Link></li>
             </ul>
           </div>
 

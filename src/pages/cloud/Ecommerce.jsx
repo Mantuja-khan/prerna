@@ -6,7 +6,7 @@ import SectionTitle from '../../components/ui/SectionTitle'
 
 const Ecommerce = () => {
   const features = [
-    "Custom e-commerce website design",
+    "Custom e-commerce store integration",
     "Product catalog management",
     "Secure payment integration",
     "Inventory management",

@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FaServer, FaNetworkWired, FaUserCog, FaTools, FaLaptopCode, FaShieldAlt } from 'react-icons/fa'
+import { FaServer, FaNetworkWired, FaUserCog, FaTools, FaLaptopCode, FaShieldAlt, FaWhatsapp } from 'react-icons/fa'
 import SectionTitle from '../components/ui/SectionTitle'
 import ServiceCard from '../components/ui/ServiceCard'
 
@@ -16,20 +16,20 @@ const services = [
       "TSS 1-Year (₹4,500) & 2-Year (₹8,100) Renewals",
       "TDL Customization (Invoices, QR, Reports)",
       "Multi-Company Data Splitting & Repair",
-      "Annual Maintenance Contract (AMC)"
+      "Dedicated Technical Support & Maintenance"
     ]
   },
   {
     id: 2,
-    title: "Busy Accounting Services",
-    description: "End-to-end Busy software sales, network multi-user installation, configuration & training.",
+    title: "Tally on Cloud Services",
+    description: "High-speed, secure remote cloud hosting for Tally Prime with 99.9% uptime and automatic backups.",
     icon: <FaTools />,
     features: [
-      "Busy Basic, Standard & Enterprise Licenses",
-      "Multi-User LAN & Server Installation",
-      "Barcode & Customized Invoice Printing",
-      "Multi-Godown & Batch Inventory Setup",
-      "Busy On-Call & On-Site Technical Support"
+      "24/7 Secure Cloud Hosting for Tally Prime",
+      "Multi-User & Remote Desktop (RDP) Setup",
+      "Access on Mac, Windows, Android & iOS",
+      "Automated Daily Off-site Data Backups",
+      "Dedicated Technical & Server Support"
     ]
   },
   {
@@ -52,7 +52,7 @@ const services = [
     icon: <FaNetworkWired />,
     features: [
       "Project Planning & System Setup",
-      "Legacy Data Migration to Tally / Busy",
+      "Legacy Data Migration to Tally Prime / Cloud",
       "Staff Training & Onboarding",
       "Post-Implementation Quality Audit",
       "Dedicated Technical Support"
@@ -73,8 +73,8 @@ const services = [
   },
   {
     id: 6,
-    title: "Annual Maintenance Contract (AMC)",
-    description: "Comprehensive AMC services to keep your accounting software and IT systems running smoothly.",
+    title: "System Maintenance & Support Services",
+    description: "Comprehensive support and maintenance services to keep your accounting software and IT systems running smoothly.",
     icon: <FaShieldAlt />,
     features: [
       "Preventive System Maintenance",
@@ -93,9 +93,75 @@ const Services = () => {
         <title>Services - PrernaInfotech</title>
         <meta name="description" content="Explore our comprehensive range of IT services including IT solutions, implementation, support, maintenance, and Tally customization." />
       </Helmet>
-      
-      
-      {/* Services Overview */}
+      {/* Top CTA Header Section */}
+      <section className="bg-slate-900 text-white py-14 lg:py-20 relative overflow-hidden">
+        {/* Dotted Pattern Background Overlay */}
+        <div className="absolute inset-0 bg-dotted-pattern opacity-35 pointer-events-none" />
+        
+        {/* Decorative Dotted Matrix SVG */}
+        <div className="absolute top-4 left-6 pointer-events-none opacity-30 hidden sm:block">
+          <svg width="110" height="110" fill="none">
+            <pattern id="dot-srv-top-1" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="2.5" fill="#38bdf8" />
+            </pattern>
+            <rect width="110" height="110" fill="url(#dot-srv-top-1)" />
+          </svg>
+        </div>
+        <div className="absolute bottom-4 right-6 pointer-events-none opacity-30 hidden sm:block">
+          <svg width="110" height="110" fill="none">
+            <pattern id="dot-srv-top-2" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="2.5" fill="#38bdf8" />
+            </pattern>
+            <rect width="110" height="110" fill="url(#dot-srv-top-2)" />
+          </svg>
+        </div>
+
+        <div className="container relative z-10 text-center max-w-4xl mx-auto px-4">
+          <motion.span 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="px-3.5 py-1 rounded-full text-xs font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/30 inline-block mb-3"
+          >
+            End-to-End Enterprise Services
+          </motion.span>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-3xl md:text-5xl font-extrabold mb-4"
+          >
+            Expert IT & Tally Services
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto mb-8"
+          >
+            Enhance your operational efficiency with authorized Tally Prime support, TDL customization, cloud deployment, and system maintenance.
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            <Link 
+              to="/contact" 
+              className="px-7 py-3 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-full shadow-lg transition-all text-sm"
+            >
+              Get Expert Assistance
+            </Link>
+            <a 
+              href="https://wa.me/919358853990?text=Hi, I need assistance with your IT & Tally services." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-7 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-full shadow-lg transition-all text-sm flex items-center gap-2"
+            >
+              <FaWhatsapp className="text-lg" /> Chat on WhatsApp
+            </a>
+          </motion.div>
+        </div>
+      </section>
       <section className="section bg-white">
         <div className="container">
           <SectionTitle 
@@ -270,41 +336,7 @@ const Services = () => {
         </section>
       ))}
       
-      {/* CTA Section */}
-      <section className="bg-primary-600 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-4 text-white"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Ready to Enhance Your IT Infrastructure?
-          </motion.h2>
-          
-          <motion.p 
-            className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            Contact us today to discuss your IT needs and discover how our services can benefit your business.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <Link to="/contact" className="btn bg-white text-primary-600 hover:bg-gray-100">
-              Get in Touch
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+
     </>
   )
 }

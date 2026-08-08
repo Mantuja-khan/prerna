@@ -1,7 +1,7 @@
 import SectionTitle from '../ui/SectionTitle'
 import ProductCard from '../ui/ProductCard'
 import tally_img from '../../assets/tally_images.jpeg'
-import busy_img from '../../assets/busy_sales_hero.png'
+import cloud_img from '../../assets/cloud_services_hero.png'
 
 const products = [
   {
@@ -20,15 +20,15 @@ const products = [
   },
   {
     id: 2,
-    title: "Busy Accounting Software",
-    description: "Complete business accounting & inventory management solution for micro, small and medium enterprises.",
-    image: busy_img,
+    title: "Tally on Cloud",
+    description: "Secure, high-speed remote cloud hosting to access Tally Prime anytime, anywhere from any device.",
+    image: cloud_img,
     features: [
-      "Multi-Location Inventory Management",
-      "GST Billing & E-Way Bill Generation",
-      "Order Processing & Quotation System",
-      "Invoicing with Barcode Support",
-      "Financial Audit & MIS Reports"
+      "24/7 Remote Access on Mac, Windows & Mobile",
+      "Automatic Daily Data Backup & Security",
+      "Multi-user Concurrent Work Flexibility",
+      "Dedicated High-Speed RDP Performance",
+      "Managed SSL & Zero Local Data Risk"
     ],
     link: "/products"
   }

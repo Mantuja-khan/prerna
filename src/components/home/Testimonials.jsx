@@ -37,7 +37,7 @@ const testimonials = [
     name: "Mr. Sanjay kumar",
     position: "Operations Manager",
     company: "Multi Computer",
-    testimonial: "We've been using their AMC services for three years now, and the reliability and response time for support has been outstanding.",
+    testimonial: "We've been using their technical support services for three years now, and the reliability and response time for support has been outstanding.",
     image: profile
   }
 ]

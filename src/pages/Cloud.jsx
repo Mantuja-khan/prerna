@@ -33,15 +33,16 @@ const cloudServices = [
   },
   {
     id: 3,
-    title: "Web Development",
-    description: "Custom website and web application development to enhance your online presence.",
+    title: "Tally on Cloud Hosting",
+    description: "High-speed remote cloud hosting for Tally Prime software with 24/7 accessibility.",
     icon: <FaLaptopCode className="text-5xl text-primary-500 mb-4" />,
+    link: "/products",
     features: [
-      "Responsive website design",
-      "E-commerce solutions",
-      "Content management systems",
-      "Web application development",
-      "SEO optimization and analytics"
+      "Remote access on Windows, Mac, Android & iOS",
+      "Automated daily offsite data backups",
+      "High-speed RDP server performance",
+      "End-to-end SSL data encryption",
+      "Multi-user concurrent access & printing"
     ]
   },
   {
@@ -64,7 +65,7 @@ const Cloud = () => {
     <>
       <Helmet>
         <title>Cloud Solutions - TechSolutions</title>
-        <meta name="description" content="Explore our cloud solutions including cloud email, cloud backup, web development, and campus server (ERP) services." />
+        <meta name="description" content="Explore our cloud solutions including cloud email, cloud backup, Tally on cloud hosting, and campus server (ERP) services." />
       </Helmet>
       
       {/* Hero Section */}
@@ -130,7 +131,7 @@ const Cloud = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                Our cloud solutions provide the flexibility, security, and scalability needed to support your business in today's digital environment. From email and data backup to web development and enterprise resource planning, we offer comprehensive cloud services tailored to your specific needs.
+                Our cloud solutions provide the flexibility, security, and scalability needed to support your business in today's digital environment. From cloud email and data backup to Tally on cloud hosting and enterprise resource planning, we offer comprehensive cloud services tailored to your specific needs.
               </motion.p>
               
               <motion.p
@@ -198,7 +199,7 @@ const Cloud = () => {
                 
                 <div className="text-center mt-auto">
                   <Link 
-                    to={`/cloud/${service.title.toLowerCase().replace(/\s+/g, '-')}`} 
+                    to={service.link || `/cloud/${service.title.toLowerCase().replace(/\s+/g, '-')}`} 
                     className="btn btn-outline"
                   >
                     Learn More
@@ -269,41 +270,7 @@ const Cloud = () => {
         </div>
       </section>
       
-      {/* CTA */}
-      <section className="bg-primary-600 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-4 text-white"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Ready to Move to the Cloud?
-          </motion.h2>
-          
-          <motion.p 
-            className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            Contact us today to discuss your cloud needs and discover how our solutions can transform your business.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <Link to="/contact" className="btn bg-white text-primary-600 hover:bg-gray-100">
-              Request Consultation
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+
     </>
   )
 }
